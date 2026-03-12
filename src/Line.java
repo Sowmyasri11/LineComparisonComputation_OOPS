@@ -19,4 +19,11 @@ public class Line {
 
         return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        Line line = (Line) obj;
+
+        return this.calculateLength() == line.calculateLength();
+    }
 }
