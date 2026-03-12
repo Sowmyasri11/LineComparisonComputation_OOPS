@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Line {
+public class Line implements Comparable<Line> {
 
     private Point p1;
     private Point p2;
@@ -21,9 +21,8 @@ public class Line {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        Line line = (Line) obj;
+    public int compareTo(Line line) {
 
-        return this.calculateLength() == line.calculateLength();
+        return Double.compare(this.calculateLength(), line.calculateLength());
     }
 }
